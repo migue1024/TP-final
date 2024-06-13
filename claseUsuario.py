@@ -1,10 +1,11 @@
 from conexion import micursor,miconexion
 
 class usuario:
-    def __init__(self,codigousuario,nombre,dni,telefono,email):
+    def __init__(self,codigousuario,nombre,dni,domicilio,telefono,email):
         self.__codigousuario = codigousuario
         self.__nombre = nombre
         self.__dni = dni
+        self.__domicilio = domicilio
         self.__telefono = telefono
         self.__email = email
         self.__situacion = "L"
@@ -28,6 +29,12 @@ class usuario:
     def set_dni(self,newdni):
         self.__dni = newdni
 
+    def get_domicilio(self):
+        return self.__domicilio
+    
+    def set_domicilio(self,newdomicilio):
+        self.__domicilio = newdomicilio
+    
     def get_telefono(self):
         return self.__telefono
 
@@ -54,8 +61,10 @@ class usuario:
 
     def verdatos(self):
         micursor.execute(f"select * from usuarios where codigo_usuario = {self.get_codigousuario()}")
-        dato = micursor.fetchall()
-        print(dato)
+        dato = micursor.fetchone()
+        for i in dato:
+            print(i)
+    
     
     def darsealta(self):
         pass
@@ -75,7 +84,7 @@ class usuario:
     def devolverpeliculas():
         pass
 
-user = usuario("010","Miguel","112223333","1212436","migue@hotmail.com")
-print(user)
+user = usuario(109,"Miguel","112223333","Zuviria 5544",1212436,"migue@hotmail.com")
+
 
 user.verdatos()
