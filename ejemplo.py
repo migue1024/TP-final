@@ -12,6 +12,7 @@ def iniciarSesion():
     #return resultado
     if len(resultado) != 0:
         print("Sesion iniciada correctamente")
+        return resultado #Despues de ejecutar todo este bloque vuelve a ejecutar
     else:
         print("Acceso denegado")
         menu()
@@ -84,12 +85,11 @@ def menuUsuario(u):#u parametro comodin
         menuUsuario(u)
         
     elif opcion2 == 8:
-        atras()
         menu()
+        #menu()
         
     elif opcion2 == 9:
         salir()
-        menu()
         #print("Gracias por usar la aplicacion")
         #quit()
     else:
@@ -154,8 +154,8 @@ def devolverPeliculas(u):
     miconexion.commit()
     print("Pelicula devuelta")
 
-def atras():
-    menu()
+#def atras():
+    #menu()
 
 
 def salir():
