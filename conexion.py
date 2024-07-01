@@ -1,6 +1,6 @@
 import mysql.connector
 
-miconexion = mysql.connector.connect(host = "localhost",user= "root",password = "")#,database = "Videoclub")
+miconexion = mysql.connector.connect(host = "localhost",user= "root",password = "",database = "Videoclub")
 micursor = miconexion.cursor()
 #crear base de datos
 micursor.execute("drop database if exists Videoclub")

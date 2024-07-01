@@ -14,7 +14,7 @@ def log_in():
     ventana_emergente.geometry("300x200+450+150")
     username=entry_username.get()
     password=entry_password.get()
-    miconexion.micursor().execute(f"select * from usuarios where nickname='{username}' and password='{password}'")
+    micursor.execute(f"select * from usuarios where nombre='{username}' and dni='{password}'")
     resultado=micursor.fetchall()
     if len(resultado)>0:
         #if username == password:
@@ -45,7 +45,7 @@ def inicioDeSesion():
     entry_password=tk.Entry(ventana_iniciar_sesion)
     entry_password.place(x=200,y=200)
 
-    boton_ingresar=tk.Button(ventana_iniciar_sesion,text="Ingresar",command=log_in())
+    boton_ingresar=tk.Button(ventana_iniciar_sesion,text="Ingresar",command=log_in)
     boton_ingresar.place(x=300,y=300)
 
 
